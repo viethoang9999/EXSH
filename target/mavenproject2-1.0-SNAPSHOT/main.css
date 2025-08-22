@@ -1,24 +1,124 @@
-body { 
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 11pt;
-    margin-left: 2em;
-    margin-right: 2em;
-}
-h1 { 
-    color: teal;
-}
-label {
-    float: left;
-    width: 6em;
-    margin-bottom: 0.5em;
-}
-input[type="text"], input[type="email"] {
-    width: 15em;
-    margin-left: 0.5em;    
-    margin-bottom: 0.5em;
-}
-br {
-    clear: both;
-}
-#submit {
-    margin-left: 0.5em; }
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Đẹp Hoàn Chỉnh</title>
+  <!-- Font Awesome (icon) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Toàn trang */
+    body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 14px;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+    }
+
+    /* Card form */
+    form {
+        background: #fff;
+        padding: 2.5em;
+        border-radius: 18px;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        width: 380px;
+        animation: fadeIn 0.6s ease-in-out;
+    }
+
+    /* Tiêu đề */
+    h1 {
+        color: #333;
+        text-align: center;
+        margin-bottom: 1.5em;
+        font-size: 1.6em;
+    }
+
+    /* Label */
+    label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.4em;
+        color: #555;
+    }
+
+    /* Input group (có icon) */
+    .input-group {
+        position: relative;
+        margin-bottom: 1.2em;
+    }
+
+    .input-group i {
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        transform: translateY(-50%);
+        color: #777;
+        font-size: 1em;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 0.8em 1em 0.8em 2.5em;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        font-size: 1em;
+        transition: all 0.3s ease;
+        background: #f9f9f9;
+    }
+
+    .input-group input:focus {
+        border-color: #6a82fb;
+        background: #fff;
+        box-shadow: 0 0 8px rgba(106,130,251,0.4);
+        outline: none;
+    }
+
+    /* Nút Submit */
+    #submit {
+        width: 100%;
+        padding: 0.9em;
+        border: none;
+        border-radius: 12px;
+        font-size: 1.1em;
+        font-weight: bold;
+        color: #fff;
+        cursor: pointer;
+        background: linear-gradient(45deg, #6a82fb, #fc5c7d);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    #submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Hiệu ứng load form */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <h1>Đăng ký</h1>
+
+    <label for="name">Họ và tên</label>
+    <div class="input-group">
+      <i class="fa fa-user"></i>
+      <input type="text" id="name" name="name" placeholder="Nhập họ tên...">
+    </div>
+
+    <label for="email">Email</label>
+    <div class="input-group">
+      <i class="fa fa-envelope"></i>
+      <input type="email" id="email" name="email" placeholder="Nhập email...">
+    </div>
+
+    <button type="submit" id="submit">Gửi</button>
+  </form>
+</body>
+</html>
