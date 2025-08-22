@@ -5,10 +5,11 @@ FROM tomcat:10.1-jdk17
 RUN rm -rf /usr/local/tomcat/webapps/*
 
 
-COPY target/mavenproject2-1.0-SNAPSHOT.war/usr/local/tomcat/webapps/ROOT.war
+COPY target/mavenproject2-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/ROOT.war
 
 
 EXPOSE 9999
 
 
 CMD ["catalina.sh", "run"]
+
